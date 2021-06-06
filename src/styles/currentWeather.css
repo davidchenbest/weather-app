@@ -1,0 +1,31 @@
+.currentWeatherCon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.highLowCon {
+  display: flex;
+  gap: 1rem;
+}
+
+.highLowCon p {
+  padding: 0.5rem;
+  background-color: antiquewhite;
+  padding: 5px;
+}
+
+.iconCon {
+  background-color: gray;
+}
+
+.currentTemp {
+  display: flex;
+  align-items: baseline;
+}
+
+.currentTemp h1 {
+  font-size: 4rem;
+}
