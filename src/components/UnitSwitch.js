@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/unitSwitch.css'
 
 export default function UnitSwitch({ setUnit }) {
 
@@ -8,7 +9,7 @@ export default function UnitSwitch({ setUnit }) {
     }
 
     return (
-        <div>
+        <div className='unitCon'>
             <select onChange={unitChange}>
                 <option value='F'>Fahrenheit</option>
                 <option value='C'>Celcius</option>
