@@ -6,6 +6,12 @@ const getData = {
     minTemp: (obj) => Math.round(obj['main']['temp_min']),
     maxTemp: (obj) => Math.round(obj['main']['temp_max']),
     iconURL: (obj) => getIconURL(obj['weather'][0]['icon']),
+    name: (obj) => (obj['name']),
+    coord: (obj) => {
+        const { lat, lon } = (obj['coord'])
+        return `${lat},${lon}`
+    },
+
 }
 
 export { getData }
