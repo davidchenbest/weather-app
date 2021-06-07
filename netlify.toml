@@ -1,0 +1,5 @@
+[build]
+publish='build'
+
+[dev]
+port = 5000

@@ -7,7 +7,7 @@ const getDay = (date) => {
     const year = +dateSplit[0]
     const month = +dateSplit[1]
     const day = +dateSplit[2]
-    const dayOfWeek = dateFormat(`${month} ${day} ${year}`, 'ddd')
+    const dayOfWeek = dateFormat(`${month}/${day}/${year}`, 'ddd')
     if (dayOfWeek === today) return 'Today'
     return dayOfWeek;
 }
