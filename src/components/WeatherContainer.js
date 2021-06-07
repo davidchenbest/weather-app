@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { getUrls } from '../util/urls'
 import { get } from '../util/fetchAPI'
 import UnitSwitch from './UnitSwitch'
@@ -13,9 +13,6 @@ import Forecast from './Forecast/Forecast'
 import { getData } from '../util/getData'
 
 export default function WeatherContainer() {
-    const count = useRef(0)
-    console.log('container render: ' + count.current++);
-
     const [isCurrentLocation, setIsCurrentLocation] = useState(false)
     const { unit, setUnit } = useContext(UnitContext)
     const [weatherObj, setWeatherObj] = useState(null)
