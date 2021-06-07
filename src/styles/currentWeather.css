@@ -6,6 +6,10 @@
   gap: 0.5rem;
 }
 
+.currentWeatherCon #background {
+  max-width: 100%;
+}
+
 .highLowCon {
   display: flex;
   gap: 1rem;

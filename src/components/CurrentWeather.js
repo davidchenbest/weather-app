@@ -14,7 +14,7 @@ export default function CurrentWeather({ weatherObj }) {
             {weatherObj ?
                 <div className='currentWeatherCon'>
                     <div className='iconCon'>
-                        <img src={windowImg} alt='window' />
+                        <img src={windowImg} alt='window' id='background' />
                         <div id='weatherImgCon'>
                             <div className='currentTemp'>
                                 <h1>{getData.temp(weatherObj)}</h1> <span>{unit}</span>
