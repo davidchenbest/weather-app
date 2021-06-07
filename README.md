@@ -6,5 +6,5 @@ unit change: fahrenheit, Celcius, Kelvin
 use web geolocation API to get current location
 switch location: GPS coordinates, zip, city
 
-#live preview
+# live preview
 https://chen-weather.netlify.app/
