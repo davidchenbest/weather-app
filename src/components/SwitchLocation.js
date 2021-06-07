@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { FaSearch } from 'react-icons/fa'
+import '../styles/switchLocation.css'
 
 export default function SwitchLocation({ searchObj, setSearchObj, setIsCurrentLocation }) {
     const [locationSearch, setLocationSearch] = useState('')
@@ -38,12 +40,12 @@ export default function SwitchLocation({ searchObj, setSearchObj, setIsCurrentLo
 
 
     return (
-        <form onSubmit={locationSubmit} >
+        <form onSubmit={locationSubmit} className='locationForm'>
             <select onChange={e => setTypeSearch(e.target.value)} value={typeSearch}>
                 {typeOptions.map(t => <option value={t.value} key={t.value}>{t.name}</option>)}
             </select>
             <input type='text' value={locationSearch} onChange={e => setLocationSearch(e.target.value)} />
-            <input type='submit' />
+            <button type='submit' ><FaSearch /></button>
         </form>
     )
 }
