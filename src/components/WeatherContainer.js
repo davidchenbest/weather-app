@@ -11,6 +11,8 @@ import CurrentWeather from './CurrentWeather'
 import { formatForecastData } from '../util/formatForecastData'
 import Forecast from './Forecast/Forecast'
 import { getData } from '../util/getData'
+import { LocalStorage } from '../util/LocalStorage'
+const storage = new LocalStorage()
 
 export default function WeatherContainer() {
     const [isCurrentLocation, setIsCurrentLocation] = useState(false)
@@ -24,13 +26,18 @@ export default function WeatherContainer() {
             if (!data) return
             setSearchObj({ type: 'cord', location: data })
             setIsCurrentLocation(true)
+            storage.remove()
         }
         )
     }
 
 
     useEffect(() => {
-        currentLocationClick()
+        let data = storage.get()
+        if (data) {
+            setSearchObj(data)
+        }
+        else currentLocationClick()
     }, [])
 
     useEffect(() => {

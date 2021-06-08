@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import '../styles/switchLocation.css'
+import { LocalStorage } from '../util/LocalStorage'
+const storage = new LocalStorage()
 
 export default function SwitchLocation({ searchObj, setSearchObj, setIsCurrentLocation }) {
     const [locationSearch, setLocationSearch] = useState('')
@@ -28,8 +30,10 @@ export default function SwitchLocation({ searchObj, setSearchObj, setIsCurrentLo
                 location = { lat: cord[0], lon: cord[1] }
             }
             else location = { [typeSearch]: locationSearch }
-            setSearchObj({ location, type: typeSearch })
+            const searchObj = { location, type: typeSearch }
+            setSearchObj(searchObj)
             setIsCurrentLocation(false)
+            storage.set(searchObj)
         } catch (error) {
             alert(error)
         }
